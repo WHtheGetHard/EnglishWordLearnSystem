@@ -9,9 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fieldformat.ErrorAndMessage;
 import fieldformat.RegistedWord;
+import fieldformat.ShowMessage;
+import fieldformat.Words;
 import flayer.CheckInput;
+import flayer.ExecInsertWords;
 
 /**
  * Servlet implementation class WordRegisted
@@ -43,12 +45,12 @@ public class WordRegisted extends HttpServlet {
 
 
 		// CheckInput
-		ErrorAndMessage errorAndMessage = new ErrorAndMessage();
+		ShowMessage showMessage = new ShowMessage();
 		CheckInput checkInput = new CheckInput();
-		errorAndMessage = checkInput.checkWordRegist(registedWord);
+		showMessage = checkInput.checkWordRegist(registedWord);
 
-		if(errorAndMessage.isShowError()) {
-			request.setAttribute("errorAndMessage", errorAndMessage);
+		if(showMessage.isAbEnd()) {
+			request.setAttribute("showMessage", showMessage);
 
 			RequestDispatcher rd = request.getRequestDispatcher("WordRegisted.jsp");
 			rd.forward(request, response);
@@ -57,7 +59,21 @@ public class WordRegisted extends HttpServlet {
 		}
 
 
-		// Next(temp)
+		// Insert to table
+		Words words = new Words();
+		words.setWord(registedWord.getNewWord());
+		words.setMean(registedWord.getMean());
+		words.setWordtype(registedWord.getWordType());
+		words.setExample(registedWord.getExampleSentence());
+
+		ExecInsertWords execInsertWords = new ExecInsertWords();
+		showMessage = execInsertWords.execInsertWords(words);
+
+		request.setAttribute("showMessage", showMessage);
+
+		RequestDispatcher rd = request.getRequestDispatcher("WordRegisted.jsp");
+
+		rd.forward(request, response);
 	}
 
 	/**

@@ -26,11 +26,6 @@
 					<option value="list">Vocabulary List</option>
 				</select>
 
-				<select name="wordFrom">
-					<option value="1">One Punch Man</option>
-					<option value="2">TOEIC</option>
-				</select>
-
 				<input type="submit" value="decide">
 			</form>
 

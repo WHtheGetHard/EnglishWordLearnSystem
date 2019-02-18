@@ -34,7 +34,6 @@ public class ExamTypeChoose extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		String examType = request.getParameter("examType");
-		String wordFrom = request.getParameter("wordFrom");
 
 		DisplayExamType displayExamType = new DisplayExamType();
 		ExamTypes examTypes = new ExamTypes();

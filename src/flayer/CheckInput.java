@@ -1,10 +1,10 @@
 package flayer;
 
-import fieldformat.ErrorAndMessage;
 import fieldformat.RegistedWord;
+import fieldformat.ShowMessage;
 
 public class CheckInput {
-	public ErrorAndMessage checkWordRegist(RegistedWord registedWord) {
+	public ShowMessage checkWordRegist(RegistedWord registedWord) {
 		StringInputCheck stringInputCheck = new StringInputCheck();
 
 		boolean newWordLack = stringInputCheck.check(registedWord.getNewWord());
@@ -12,88 +12,101 @@ public class CheckInput {
 		boolean wordTypeLack = stringInputCheck.check(registedWord.getWordType());
 		boolean exampleSentenceLack = stringInputCheck.check(registedWord.getExampleSentence());
 
-		ErrorAndMessage errorAndMessage = new ErrorAndMessage();
+		ShowMessage showMessage = new ShowMessage();
 
 		if(newWordLack && meanLack && wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input all words.");
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input all words.");
 
 		} else if (!newWordLack && meanLack && wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "mean, word type, example sentence.");
 
+
 		} else if (newWordLack && !meanLack && wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "new word, word type, example sentence.");
 
 		} else if (newWordLack && meanLack && !wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "new word, mean, example sentence.");
 
 		} else if (newWordLack && meanLack && wordTypeLack && !exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "new word, mean, word type.");
 
 		} else if (!newWordLack && !meanLack && wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "word type, example sentence.");
 
 		} else if (!newWordLack && meanLack && !wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "mean, example sentence.");
 
 		} else if (!newWordLack && meanLack && wordTypeLack && !exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "mean, word type.");
 
 		} else if (newWordLack && !meanLack && !wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "new word, example sentence.");
 
 		} else if (newWordLack && !meanLack && wordTypeLack && !exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "new word, word type.");
 
 		} else if (newWordLack && meanLack && !wordTypeLack && !exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input bellow words.<br>"
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input bellow words.<br>"
 					+ "new word, mean.");
 
 		} else if (!newWordLack && !meanLack && !wordTypeLack && exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input example sentence.");
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input example sentence");
 
 		} else if (newWordLack && !meanLack && !wordTypeLack && !exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input new word.");
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input new word");
 
 		} else if (!newWordLack && meanLack && !wordTypeLack && !exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input mean.");
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input mean");
 
 		} else if (!newWordLack && !meanLack && wordTypeLack && !exampleSentenceLack) {
-			errorAndMessage.setShowError(true);
-			errorAndMessage.setMessage("please input word type.");
+			showMessage.setAbEnd(true);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("please input word type");
 
 		} else {
-			errorAndMessage.setShowError(false);
-			errorAndMessage.setMessage("please input word type.");
+			showMessage.setAbEnd(false);
+			showMessage.setNomalEnd(false);
+			showMessage.setMessage("");
 
 		}
 
-
-
-
-
-		return errorAndMessage;
+		return showMessage;
 	}
 }

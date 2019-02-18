@@ -16,7 +16,7 @@
 			<article>
 				<h2>Input new English word</h2>
 
-				<%@ include file="Error.jsp" %>
+				<%@ include file="MessageArea.jsp" %>
 
 			</article>
 
