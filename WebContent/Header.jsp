@@ -33,7 +33,7 @@
 				<ul class="second-ul">
 
 					<li class="second-li">
-						<a href="#">Undecided</a>
+						<a href="WordRegisted.jsp">Word Registed</a>
 					</li>
 
 					<li class="second-li">
