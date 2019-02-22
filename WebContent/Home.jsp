@@ -7,8 +7,8 @@
 
 			<link rel="stylesheet" type="text/css" href="css/commonStyle.css">
 			<link rel="stylesheet" type="text/css" href="css/homeStyle.css">
-
-			<title>Home</title>
+			<link rel="shortcut icon" href="./img/icon.jpg">
+			<title>English Word Study</title>
 		</head>
 
 		<body>

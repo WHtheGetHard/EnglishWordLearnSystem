@@ -9,6 +9,7 @@
 
 			<link rel="stylesheet" type="text/css" href="css/commonStyle.css">
 			<link rel="stylesheet" type="text/css" href="css/examStyle.css">
+			<link rel="shortcut icon" href="./img/icon.jpg">
 			<title>Word Exam</title>
 		</head>
 
@@ -17,6 +18,7 @@
 
 		<div class="main">
 			<article>
+				<%@ include file="MessageArea.jsp" %>
 				<h2>Choose exam type and word from.</h2>
 			</article>
 

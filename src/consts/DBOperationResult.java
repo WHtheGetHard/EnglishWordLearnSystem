@@ -8,5 +8,6 @@ public class DBOperationResult {
 	static {
 		operationResult.put("0","登録が完了しました。");
 		operationResult.put("1", "登録に失敗しました。");
+		operationResult.put("2", "データの取得に失敗しました。");
 	}
 }

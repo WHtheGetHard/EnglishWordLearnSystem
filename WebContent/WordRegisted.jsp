@@ -7,7 +7,7 @@
 
 		<link rel="stylesheet" type="text/css" href="css/commonStyle.css">
 		<link rel="stylesheet" type="text/css" href="css/wordRegistedStyle.css">
-
+		<link rel="shortcut icon" href="./img/icon.jpg">
 		<title>Word Registed</title>
 	</head>
 	<body>

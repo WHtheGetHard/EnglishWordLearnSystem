@@ -39,7 +39,10 @@ public class ExamTypeChoose extends HttpServlet {
 		ExamTypes examTypes = new ExamTypes();
 		examTypes = displayExamType.decideExamType(examType);
 
+
+
 		request.setAttribute("examTypes", examTypes);
+
 
 		RequestDispatcher rd = request.getRequestDispatcher("Exam.jsp");
 		rd.forward(request, response);
