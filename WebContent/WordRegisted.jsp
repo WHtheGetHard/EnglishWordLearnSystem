@@ -23,11 +23,11 @@
 			<form action="WordRegisted" action="post">
 				<table class="registedWord">
 					<tr>
-						<td>New Word : <input type="text" name="newWord" placeholder="apple"></td>
+						<td>New Word : <input type="text" name="newWord" placeholder="apple" autocomplete="off"></td>
 					</tr>
 
 					<tr>
-						<td>Mean : <input type="text" name="mean" placeholder="リンゴ"></td>
+						<td>Mean : <input type="text" name="mean" placeholder="リンゴ" autocomplete="off"></td>
 					</tr>
 
 					<tr>

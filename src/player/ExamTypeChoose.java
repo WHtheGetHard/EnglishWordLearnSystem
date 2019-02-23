@@ -1,6 +1,7 @@
 package player;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fieldformat.ExamTypes;
+import fieldformat.ShowMessage;
+import fieldformat.Words;
 import flayer.DisplayExamType;
+import flayer.ExecSelectWords;
 
 /**
  * Servlet implementation class ExamTypeChoose
@@ -33,6 +37,16 @@ public class ExamTypeChoose extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
+		ExecSelectWords execSelectWords = new ExecSelectWords();
+		execSelectWords.selectFromWords();
+
+		ArrayList<Words> wordList = new ArrayList<Words>();
+		ShowMessage showMessage = new ShowMessage();
+
+		wordList = execSelectWords.getWordsList();
+		showMessage = execSelectWords.getShowMessage();
+
+
 		String examType = request.getParameter("examType");
 
 		DisplayExamType displayExamType = new DisplayExamType();
@@ -40,7 +54,8 @@ public class ExamTypeChoose extends HttpServlet {
 		examTypes = displayExamType.decideExamType(examType);
 
 
-
+		request.setAttribute("wordList", wordList);
+		request.setAttribute("showMessage", showMessage);
 		request.setAttribute("examTypes", examTypes);
 
 
