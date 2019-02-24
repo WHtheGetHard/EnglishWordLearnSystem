@@ -6,3 +6,7 @@ div.main {
 article {
 	-webkit-text-stroke: 0.3px #FFFFFF;
 }
+
+td.answer {
+	visibility: hidden;
+}

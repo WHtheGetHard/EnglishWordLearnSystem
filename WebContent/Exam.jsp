@@ -52,7 +52,9 @@
 								<tr>
 									<th>Word</th>
 									<th>Input the mean</th>
-									<th>Correct Answer</th>
+									<th>Show the Answer</th>
+									<th>Answer</th>
+									<th>〇・×</th>
 								</tr>
 							</table>
 			<%
@@ -65,8 +67,16 @@
 									<td><%= wordList.get(i).getWord() %></td>
 									<td>
 										<input type="text" autocomplete="off">
-										<input type="hidden" value="<%= wordList.get(i).getMean()%>">
 									</td>
+
+									<td>
+										<input type="button" value="show" name="<%= i %>">
+									</td>
+
+									<td id="<%= i%>" class="answer">
+										<%= wordList.get(i).getMean() %>
+									</td>
+
 									<td>
 										<select name="correctOrNot">
 											<option value="〇">〇</option>
@@ -81,5 +91,8 @@
 				}
 			%>
 		</div>
+
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="./js/Exam.js"></script>
 	</body>
 </html>
