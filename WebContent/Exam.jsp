@@ -54,15 +54,13 @@
 									<th>Input the mean</th>
 									<th>Show the Answer</th>
 									<th>Answer</th>
-									<th>〇・×</th>
+									<th>Evaluation</th>
 								</tr>
-							</table>
 			<%
 						for (int i = 0; i < wordList.size(); i++) {
 
 
 			%>
-							<table>
 								<tr>
 									<td><%= wordList.get(i).getWord() %></td>
 									<td>
@@ -70,7 +68,7 @@
 									</td>
 
 									<td>
-										<input type="button" value="show" name="<%= i %>">
+										<input type="button" value="display" name="<%= i %>">
 									</td>
 
 									<td id="<%= i%>" class="answer">
@@ -84,9 +82,12 @@
 										</select>
 									</td>
 								</tr>
-							</table>
+
 			<%
 						}
+			%>
+							</table>
+			<%
 					}
 				}
 			%>

@@ -10,3 +10,11 @@ article {
 td.answer {
 	visibility: hidden;
 }
+
+table {
+	background-color: #FFFFFF;
+}
+
+tr:nth-child(odd) {
+	background-color: #999999;
+}
