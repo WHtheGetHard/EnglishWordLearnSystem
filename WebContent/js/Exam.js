@@ -26,3 +26,9 @@ function buttonControl() {
 		$('#registSubmit').prop('disabled', true);
 	}
 }
+
+$('input:button').on('click',function() {
+	var buttonId = $(this).attr('name');
+
+	$('#' + buttonId).css('visibility','visible');
+});
