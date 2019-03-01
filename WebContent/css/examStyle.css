@@ -18,3 +18,11 @@ table {
 tr:nth-child(odd) {
 	background-color: #999999;
 }
+
+input:focus {
+	background-color: #BBBBBB;
+}
+
+select:focus {
+	background-color: #BBBBBB;
+}

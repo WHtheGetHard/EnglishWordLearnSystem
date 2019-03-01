@@ -34,6 +34,7 @@
 				<input type="submit" value="decide">
 			</form>
 
+			<form action="ExamResultRegist" method="post">
 			<%
 				ExamTypes examTypes = new ExamTypes();
 				examTypes = (ExamTypes) request.getAttribute("examTypes");
@@ -64,6 +65,7 @@
 								<tr>
 									<td><%= wordList.get(i).getWord() %></td>
 									<td>
+										<input type="hidden" name="wordId<%= i %>" value="<%= wordList.get(i).getId() %>">
 										<input type="text" autocomplete="off">
 									</td>
 
@@ -76,7 +78,8 @@
 									</td>
 
 									<td>
-										<select name="correctOrNot">
+										<select name="result<%= i %>" class="examResult">
+											<option value="" selected></option>
 											<option value="〇">〇</option>
 											<option value="×">×</option>
 										</select>
@@ -91,6 +94,8 @@
 					}
 				}
 			%>
+				<input type="submit" value="regist" id="registSubmit">
+			</form>
 		</div>
 
 		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
